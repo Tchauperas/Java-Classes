@@ -8,27 +8,28 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Products pd = new Products();
 
         System.out.println("Enter product data: ");
         System.out.print("Name: ");
-        pd.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.print("Price: ");
-        pd.price = sc.nextDouble();
+        double price = sc.nextDouble();
         System.out.print("Quantity on stock: ");
-        pd.quantity = sc.nextInt();
+        int quantity = sc.nextInt();
+
+        Products pd = new Products(name, price, quantity);
 
         System.out.println("Product data: " + pd.toString());
 
         System.out.print("Enter the products added in stock: ");
-        int add = sc.nextInt();
-        pd.addProducts(add);
+        int addRev = sc.nextInt();
+        pd.addProducts(addRev);
 
         System.out.println("Updated data: " + pd.toString());
 
         System.out.print("Enter the products removed in stock: ");
-        int del = sc.nextInt();
-        pd.removeProducts(del);
+        addRev = sc.nextInt();
+        pd.removeProducts(addRev);
 
         System.out.println("Updated data: " + pd.toString());
 
