@@ -30,6 +30,10 @@ public class Bank {
     }
 
     public void saque(double saque) {
-        value -= saque;
+        value -= saque - 5;
+    }
+
+    public String toString() {
+        return "Account: " + acc + ", Holder: " + name + ", Balance: $ " + value;
     }
 }
