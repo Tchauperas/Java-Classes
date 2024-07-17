@@ -1,39 +1,46 @@
 package entities;
 
 public class Bank {
-    private int acc;
-    private String name;
-    private double value = 0;
+    private int number;
+    private String holder;
+    private double balance;
 
-    public void setAcc(int acc) {
-        this.acc = acc;
+    public Bank(int number, String holder) {
+        this.number = number;
+        this.holder = holder;
     }
 
-    public int getAcc() {
-        return acc;
+    public Bank(int number, String holder, double inicialDeposit) {
+        this.number = number;
+        this.holder = holder;
+        deposit(inicialDeposit);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getNumber() {
+        return number;
     }
 
-    public String getName() {
-        return name;
+    public String getHolder() {
+        return holder;
     }
 
-    public double getValue() {
-        return value;
+    public void setHolder(String holder) {
+        this.holder = holder;
     }
 
-    public void deposito(double deposito) {
-        value += deposito;
+    public double getBalance() {
+        return balance;
     }
 
-    public void saque(double saque) {
-        value -= saque - 5;
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount + 5;
     }
 
     public String toString() {
-        return "Account: " + acc + ", Holder: " + name + ", Balance: $ " + value;
+        return "Account " + number + ", Holder: " + holder + ", Balance: " + String.format("%.2f", balance);
     }
 }
