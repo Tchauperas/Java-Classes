@@ -5,17 +5,6 @@ public class Bank {
     private String holder;
     private double balance;
 
-    public Bank(int number, String holder) {
-        this.number = number;
-        this.holder = holder;
-    }
-
-    public Bank(int number, String holder, double inicialDeposit) {
-        this.number = number;
-        this.holder = holder;
-        deposit(inicialDeposit);
-    }
-
     public int getNumber() {
         return number;
     }
@@ -30,6 +19,17 @@ public class Bank {
 
     public double getBalance() {
         return balance;
+    }
+
+    public Bank(int number, String holder) {
+        this.number = number;
+        this.holder = holder;
+    }
+
+    public Bank(int number, String holder, double inicialDeposit) {
+        this.number = number;
+        this.holder = holder;
+        deposit(inicialDeposit);
     }
 
     public void deposit(double amount) {
