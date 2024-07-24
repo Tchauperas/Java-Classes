@@ -16,7 +16,7 @@ public class Program {
         Students[] vect = new Students[n];
 
         for(int i = 0; i < n; i++) {
-            System.out.println("Digite o nome e as notas do " + (i + 1) + " aluno");
+            System.out.println("Digite o nome e as notas do " + (i + 1) + "º aluno");
             sc.nextLine();
             String name = sc.nextLine();
             double gd1 = sc.nextDouble();
@@ -27,7 +27,8 @@ public class Program {
         double avg = 0;
         System.out.println("Alunos aprovados:");
         for(int i = 0; i < n; i++) {
-            if() {
+            avg = (vect[i].getGd1() + vect[i].getGd2()) / 2; 
+            if(avg >= 6) {
                 System.out.println(vect[i].getName());
             }
         }
