@@ -22,4 +22,8 @@ public class Employees{
         this.name = name;
         this.salary = salary;
     }
+
+    public void updateSalary(double raize) {
+        salary += (raize * (salary / 100));
+    }
 }
