@@ -8,8 +8,6 @@ public class App {
         List<String> list = new ArrayList<>();
 
         list.add("Maria");
-        list.add("Mari");
-        list.add("Mar");
         list.add("Bob");
         list.add("Kesler");
         list.add("Diabolical");
