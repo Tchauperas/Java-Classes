@@ -9,7 +9,8 @@ public class App {
         LocalDateTime d02 = LocalDateTime.now();
         Instant d03 = Instant.now();
 
-        LocalDate r1 = LocalDate.ofInstant
+        System.out.println(d02.getDayOfMonth());
+        System.out.println(d01.getDayOfYear());
 
         
     }
