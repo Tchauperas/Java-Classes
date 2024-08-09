@@ -29,7 +29,7 @@ public class Program {
 		Client client = new Client(name, email, birthDate);
 		
 		System.out.println("Enter order data: ");
-		System.out.print("Status");
+		System.out.print("Status: ");
 		OrderStatus status = OrderStatus.valueOf(sc.next());
 		
 		Order order = new Order(new Date(), status, client);
