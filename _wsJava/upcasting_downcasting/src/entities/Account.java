@@ -2,9 +2,9 @@ package entities;
 
 public class Account {
 	
-	private Integer number;
+	private int number;
 	private String holder;
-	protected Double balance;
+	protected double balance;
 	
 	public Account() {}
 
@@ -39,6 +39,7 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) {
-		balance -= amount;
+		balance -= amount + 5;
 	}
+
 }
