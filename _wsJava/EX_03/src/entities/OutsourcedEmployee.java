@@ -6,17 +6,18 @@ public class OutsourcedEmployee extends Employee {
 	
 	public OutsourcedEmployee() {}
 
-	public OutsourcedEmployee(String name, int hours, double valuePerHour) {
+	public OutsourcedEmployee(String name, int hours, double valuePerHour, double addicionalChard) {
 		super(name, hours, valuePerHour);
+		this.addicionalChard = addicionalChard;
 	}
 
 	public double getAddicionalChard() {
 		return addicionalChard;
 	}
-
-	public void setAddicionalChard(double addicionalChard) {
-		this.addicionalChard = addicionalChard * 1.1;
-	}
 	
+	@Override
+	public double payment() {
+		return (getHours() * getValuePerHour()) + addicionalChard;
+	}
 	
 }

@@ -5,12 +5,13 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Employee;
+import entities.OutsourcedEmployee;
 
 public class Program {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Employee> emp = new ArrayList<>();
+		ArrayList<Employee> emp = new ArrayList<Employee>();
 		
 		System.out.print("Enter the number of employees: ");
 		int n = sc.nextInt();
@@ -19,18 +20,28 @@ public class Program {
 			System.out.println("Employee #" + (i + 1) + " data:");
 			System.out.print("Outsourced (y / n)? ");
 			sc.nextLine();
-			String out = sc.nextLine();
+			char out = sc.next().charAt(0);
 			System.out.print("Name: ");
+			sc.nextLine();
 			String name = sc.nextLine();
 			System.out.print("Hours: ");
 			int hours = sc.nextInt();
-			System.out.println("Value per hour: ");
+			System.out.print("Value per hour: ");
 			double vph = sc.nextDouble();
-			if(out == "y") {
-				System.out.println();
+			if(out == 'y') {
+				System.out.print("Addicional charge: ");
+				double ad = sc.nextDouble();
+				emp.add(new OutsourcedEmployee(name, hours, vph, (ad * 1.1)));
+			} else {
+				emp.add(new Employee(name, hours, vph));
 			}
 		}
 		
+		System.out.println("PAYMENTS: ");
+		
+		for(int i = 0; i < n; i++) {
+			System.out.println(emp.get(i).getName() + " - $ " + emp.get(i).payment());
+		}
 		
 		sc.close();
 	}
