@@ -18,6 +18,8 @@ public class ImportedProduct extends Product {
 		this.customsFee = customsFee;
 	}
 	
-	
+	public String priceTag() {
+		return getName() + " $ " + getPrice();
+	}
 
 }
