@@ -1,5 +1,6 @@
 package application;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -24,6 +25,22 @@ public class Program {
 				case 'c':
 					System.out.print("Name: ");
 					sc.nextLine();
+					String cName = sc.nextLine();
+					System.out.print("Price: ");
+					double cPrice = sc.nextDouble();
+					pd.add(new Product(cName, cPrice));
+					break;
+				
+				case 'u':
+					System.out.print("Name: ");
+					sc.nextLine();
+					String uName = sc.nextLine();
+					System.out.print("Price: ");
+					double uPrice = sc.nextDouble();
+					System.out.print("Manufacture date (DD/MM/YYYY): ");
+					String date = sc.nextLine();
+					SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy"); 
+					
 			}
 		}
 		

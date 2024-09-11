@@ -22,6 +22,6 @@ public class UsedProduct extends Product {
 
 	@Override
 	public String priceTag() {
-		return getName() + " $ " + getPrice();
+		return getName() + " (used) $ " + getPrice() + "(Manufacture date: " + manufactureDate + ")";
 	}
 }
