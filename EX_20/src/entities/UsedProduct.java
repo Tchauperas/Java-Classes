@@ -1,27 +1,27 @@
 package entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class UsedProduct extends Product {
-	private Date manufactureDate;
+	private LocalDate manufactureDate;
 	
 	public UsedProduct() {}
 
-	public UsedProduct(String name, double price, Date manufactureDate) {
+	public UsedProduct(String name, double price, LocalDate manufactureDate) {
 		super(name, price);
 		this.manufactureDate = manufactureDate;
 	}
 	
-	public Date getManufactureDate() {
+	public LocalDate getManufactureDate() {
 		return manufactureDate;
 	}
 
-	public void setManufactureDate(Date manufactureDate) {
+	public void setManufactureDate(LocalDate manufactureDate) {
 		this.manufactureDate = manufactureDate;
 	}
 
 	@Override
 	public String priceTag() {
-		return getName() + " (used) $ " + getPrice() + "(Manufacture date: " + manufactureDate + ")";
+		return getName() + " (used) $ " + getPrice() + " (Manufacture date: " + manufactureDate + ")";
 	}
 }
