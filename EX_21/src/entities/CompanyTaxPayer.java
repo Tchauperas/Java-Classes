@@ -17,6 +17,12 @@ public class CompanyTaxPayer extends TaxPayer {
 
     @Override
     public double taxesPaid() {
-        return 0;
+        double tax = (numberEmployee < 10) ? getAnualIncome() * 0.16 : getAnualIncome() * 0.14;
+        return tax;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": " + String.format("%.2f", taxesPaid());
     }
 }

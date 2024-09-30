@@ -20,4 +20,6 @@ public abstract class TaxPayer {
     }
 
     public abstract double taxesPaid(); 
+
+    public abstract String toString();
 }

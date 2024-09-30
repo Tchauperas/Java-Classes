@@ -17,6 +17,17 @@ public class IndividualTaxPayer extends TaxPayer {
 
     @Override
     public double taxesPaid() {
-        return 0;
+        double basicTax = (getAnualIncome() < 20000) ? getAnualIncome() * 0.15 : getAnualIncome() * 0.25;
+        basicTax -= (healthExp * 0.5);
+        if (basicTax <= 0) {
+            return 0;
+        } else {
+            return basicTax;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": " + String.format("%.2f", taxesPaid());
     }
 }
