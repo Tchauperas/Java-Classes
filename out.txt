@@ -1,3 +1,6 @@
 Dia
 Tarde
 Noite
+Dia
+Tarde
+Noite
