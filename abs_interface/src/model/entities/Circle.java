@@ -24,7 +24,6 @@ public class Circle extends AbstractShape{
         return Math.PI * radius * radius;
     }
 
-    @Override
     public String toString() {
         return "Raio: " + radius + "\nArea: " + area() + "\nCor: " + getColor();
     }

@@ -34,8 +34,7 @@ public class Rectangle extends AbstractShape {
         return height * width;
     }
 
-    @Override
     public String toString() {
-        return "Altura: " + height + "\nLargura" + width + "\nArea: " + area() + "\nCor" + getColor();
+        return "RETANGULO\nAltura: " + height + "\nLargura" + width + "\nArea: " + area() + "\nCor" + getColor() + "\n";
     }
 }
