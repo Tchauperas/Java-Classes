@@ -3,7 +3,6 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import services.BrazilInterestService;
 import services.UsaInterestService;
 
 public class Program {
