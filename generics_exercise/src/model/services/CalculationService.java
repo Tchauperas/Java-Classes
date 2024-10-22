@@ -15,5 +15,6 @@ public class CalculationService<T> {
             }
         }
         return max;
+        
     }
 }
