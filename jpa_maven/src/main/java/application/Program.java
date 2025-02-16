@@ -1,16 +1,26 @@
 package application;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import domain.Person;
 
 public class Program {
     public static void main(String[] args) {
-        
-        Person p1 = new Person(1, "Mark", "mark@gmail.com");
-        Person p2 = new Person(2, "Chloe", "chloe@gmail.com");
-        Person p3 = new Person(3, "Bob", "bob@gmail.com");
 
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+        EntityManager em = emf.createEntityManager();
+
+        Person p = em.find(Person.class, 2);
+
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
+
+        System.out.println("Pronto!");
+        em.close();
+        emf.close();
+
     }
 }
